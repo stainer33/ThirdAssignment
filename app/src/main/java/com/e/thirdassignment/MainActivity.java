@@ -24,6 +24,7 @@ ActionBar toolbar;
         setContentView(R.layout.activity_main);
 
         bottomNavigationView=findViewById(R.id.bottomNavigationView);
+        toolbar = getSupportActionBar();
         toolbar.setTitle("Home");
         bottomNavigationView.setSelectedItemId(R.id.navItemHome);
         loadFragment(new HomeFragment());

@@ -34,16 +34,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Male"
+            android:id="@+id/Male"
             android:layout_margin="10sp"/>
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Female"
+            android:id="@+id/Female"
             android:layout_margin="10sp"/>
         <RadioButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Others"
+            android:id="@+id/Others"
             android:layout_margin="10sp"/>
     </RadioGroup>
     <EditText
