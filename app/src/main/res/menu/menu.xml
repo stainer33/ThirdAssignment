@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/navItemHome"
+    android:title="Home"
+    android:icon="@drawable/ic_home"/>
+    <item android:id="@+id/navItemRegister"
+        android:title="Add Student"
+        android:icon="@drawable/ic_person_add"/>
+    <item android:id="@+id/navItemAbout"
+        android:title="About us"
+        android:icon="@drawable/ic_notifications_black_24dp"/>
+</menu>
