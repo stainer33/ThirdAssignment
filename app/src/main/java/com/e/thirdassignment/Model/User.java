@@ -6,11 +6,13 @@ public class User {
     private String address;
     private int imgId;
 
+
     public User(String name, int age, String address, int imgId) {
         this.name = name;
         this.age = age;
         this.address = address;
         this.imgId = imgId;
+
     }
 
     public String getName() {

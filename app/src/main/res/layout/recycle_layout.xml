@@ -49,4 +49,16 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/address" />
 
+    <ImageView
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:src="@drawable/ic_delete"
+        android:id="@+id/imgDel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.605" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

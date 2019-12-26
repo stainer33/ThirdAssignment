@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.e.thirdassignment.Adapter.UserAdapter;
-import com.e.thirdassignment.Model.LIstData;
 import com.e.thirdassignment.Model.User;
 import com.e.thirdassignment.R;
 
@@ -28,7 +27,7 @@ public class HomeFragment extends Fragment {
 
       RecyclerView recyclerView;
     UserAdapter userAdapter;
-    public   List<User> users=new ArrayList<>();
+    public   static  List<User> users=new ArrayList<>();
    // List<User> users=new ArrayList<>();
 
     @Override
@@ -38,16 +37,15 @@ public class HomeFragment extends Fragment {
        recyclerView=(RecyclerView) view.findViewById(R.id.recyclerView);
 
 
-        LIstData listData = new LIstData();
-        listData.setUsers(users);
 
+        if(users.isEmpty()){
         users.add(new User("Pasang Sherpa",33,"New York",R.drawable.male));
         users.add(new User("Puja Shah",33,"New York",R.drawable.female));
-        users.add(new User("Saroj Tamang",33,"New York",R.drawable.others));
+        users.add(new User("Saroj Tamang",33,"New York",R.drawable.others));}
         // Inflate the layout for this fragment
-       userAdapter = new UserAdapter(users);
+       userAdapter = new UserAdapter(getContext(),users);
         recyclerView.setAdapter(userAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         return view;
     }

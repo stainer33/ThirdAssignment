@@ -9,15 +9,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.e.thirdassignment.Model.User;
 import com.e.thirdassignment.fragments.AboutFragment;
 import com.e.thirdassignment.fragments.HomeFragment;
 import com.e.thirdassignment.fragments.RegisterFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 BottomNavigationView bottomNavigationView;
 ActionBar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,12 +45,12 @@ ActionBar toolbar;
                         loadFragment(fragment);
                         return true;
                     case R.id.navItemRegister:
-                        toolbar.setTitle("My Gifts");
+                        toolbar.setTitle("Register");
                         fragment = new RegisterFragment();
                         loadFragment(fragment);
                         return true;
                     case R.id.navItemAbout:
-                        toolbar.setTitle("Cart");
+                        toolbar.setTitle("About us");
                         fragment = new AboutFragment();
                         loadFragment(fragment);
                         return true;

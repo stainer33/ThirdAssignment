@@ -4,9 +4,9 @@ package com.e.thirdassignment.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +16,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.e.thirdassignment.Adapter.UserAdapter;
-import com.e.thirdassignment.MainActivity;
-import com.e.thirdassignment.Model.LIstData;
 import com.e.thirdassignment.Model.User;
 import com.e.thirdassignment.R;
 
@@ -56,30 +53,47 @@ public class RegisterFragment extends Fragment {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Validate();
                 int id = radioGender.getCheckedRadioButtonId();
 
                 radioButton =view.findViewById(id);
 
                 String gender =radioButton.getText().toString();
-                Toast.makeText(getContext(), gender, Toast.LENGTH_SHORT).show();
-                List<User> users=new ArrayList<>();
-                HomeFragment homeFragment=new HomeFragment();
-                homeFragment.users.add(new User("Johan Bach",33,"New York",R.drawable.male));
-                users.add(new User("Johan Bach",33,"New York",R.drawable.male));
-                LIstData listData = new LIstData();
-                listData.setUsers(users);
 
-               // homeFragment.users.add(users);
-               UserAdapter userAdapter = new UserAdapter(users);
-               userAdapter.notifyData(users);
+                if(gender.equals("Male")) {
+                    HomeFragment.users.add(new User(etName.getText().toString(), Integer.parseInt(etAge.getText().toString()), etAddress.getText().toString(), R.drawable.male));
+                }
+                else if(gender.equals("Female")) {
+                    HomeFragment.users.add(new User(etName.getText().toString(), Integer.parseInt(etAge.getText().toString()), etAddress.getText().toString(), R.drawable.female));
+                }
+                else {
+                    HomeFragment.users.add(new User(etName.getText().toString(), Integer.parseInt(etAge.getText().toString()), etAddress.getText().toString(), R.drawable.others));
+                }
+                Toast.makeText(getContext(), "User Added", Toast.LENGTH_SHORT).show();
 
-             //   Toast.makeText(MainActivity.class, "", Toast.LENGTH_SHORT).show();
+
+
 
             }
         });
 
         return view;
 
+    }
+    private  void Validate(){
+        if(TextUtils.isEmpty(etName.getText())){
+            etName.setError("Enter your name");
+            etName.requestFocus();
+            return;
+        }else if(TextUtils.isEmpty(etAddress.getText())){
+            etAddress.setError("Please enter address");
+            etAddress.requestFocus();
+            return;
+        }else if(TextUtils.isEmpty(etAge.getText())){
+            etAge.setError("Please enter age");
+            etAge.requestFocus();
+            return;
+        }
     }
 
 }
