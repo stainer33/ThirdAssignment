@@ -56,6 +56,7 @@ List<User>users;
 
                 users.remove(position);
                 notifyItemRemoved(position);
+                Toast.makeText(context, "User deleted", Toast.LENGTH_SHORT).show();
 
             }
         });
